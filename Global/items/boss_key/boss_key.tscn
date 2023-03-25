@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Global/items/boss_key/boss_key.png" type="Texture" id=1]
+[ext_resource path="res://material/unshaded.tres" type="Material" id=2]
+[ext_resource path="res://Global/items/boss_key/boss_key.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[node name="boss_key" type="Sprite"]
+material = ExtResource( 2 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

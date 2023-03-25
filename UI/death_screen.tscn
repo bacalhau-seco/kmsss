@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/theme.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/Blacknorthdemo-mLE25.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://tileset/spritesheet/skull.png" type="Texture" id=3]
+[ext_resource path="res://UI/death_screen.gd" type="Script" id=4]
+[ext_resource path="res://audio/scream.mp3" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 115
+outline_size = 6
+outline_color = Color( 0.615686, 0.0862745, 0.0862745, 1 )
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="death_screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.987
+margin_bottom = 7.79999
+color = Color( 0.152941, 0, 0, 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 0.237305, 0.0961733, 0.0961733, 0.533333 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -16.0
+margin_right = 140.0
+margin_bottom = 16.0
+custom_fonts/normal_font = ExtResource( 1 )
+text = "the nazis took over"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -356.0
+margin_right = 356.0
+margin_bottom = 128.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_fonts/normal_font = SubResource( 1 )
+meta_underlined = false
+text = "You are Dead!"
+fit_content_height = true
+scroll_active = false
+
+[node name="start" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.853
+anchor_right = 0.5
+anchor_bottom = 0.853
+margin_left = -112.0
+margin_top = -23.8
+margin_right = 114.0
+margin_bottom = 24.2
+custom_fonts/font = ExtResource( 1 )
+text = "PLAY AGAIN"
+
+[node name="scream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+attenuation = 1e-05
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
