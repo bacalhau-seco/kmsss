@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hitlertake1.mp3-d32cc1dda9be23c93ecdfc81ba7dade3.mp3str"
+
+[deps]
+
+source_file="res://audio/Hitlertake1.mp3"
+dest_files=[ "res://.import/Hitlertake1.mp3-d32cc1dda9be23c93ecdfc81ba7dade3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Flesh Contraption.mp3-d0cccb1fb29ae61e8e0b08e6043c5e61.mp3str"
+
+[deps]
+
+source_file="res://audio/Flesh Contraption.mp3"
+dest_files=[ "res://.import/Flesh Contraption.mp3-d0cccb1fb29ae61e8e0b08e6043c5e61.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
